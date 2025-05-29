@@ -5,6 +5,11 @@
 # LICENSE file in the root directory of this source tree.
 
 import os
+# os.environ["HF_HOME"] = r"/d_disk/huggingface"
+# # 或者
+# os.environ["TRANSFORMERS_CACHE"] = r"/d_disk/huggingface/transformers"
+
+import os
 import cv2
 import torch
 import numpy as np
@@ -17,6 +22,7 @@ import gc
 import time
 
 sys.path.append("vggt/")
+torch.hub.set_dir('/d_disk/torch_hub')
 
 from visual_util import predictions_to_glb
 from vggt.models.vggt import VGGT
@@ -695,4 +701,4 @@ with gr.Blocks(
         outputs=[reconstruction_output, target_dir_output, image_gallery, log_output],
     )
 
-    demo.queue(max_size=20).launch(show_error=True, share=True)
+    demo.queue(max_size=20).launch(server_name="0.0.0.0", show_error=True, share=True)

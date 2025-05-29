@@ -5,3 +5,7 @@ Pillow
 huggingface_hub
 einops
 safetensors
+scipy
+matplotlib
+trimesh
+gradio
