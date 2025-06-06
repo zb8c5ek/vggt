@@ -149,3 +149,4 @@ skyseg.onnx
 *.egg-info
 /.gradio
 /.idea
+/input_images_20250604_034031_806762
